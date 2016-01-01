@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">WargameTimer</string>
     <string name="action_settings">Settings</string>
+    <string name="TimeLabel">Set Time</string>
+    <string name="MusicLabelPerson1">Set Music for Player 1</string>
+    <string name="MusicLabelPerson2">Set Music for Player 2</string>
+    <string name="StartButtonText">Start Game</string>
+    <string name="title_activity_timer">Timer</string>
 </resources>
