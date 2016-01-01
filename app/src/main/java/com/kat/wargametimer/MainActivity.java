@@ -50,12 +50,21 @@ public class MainActivity extends AppCompatActivity {
     public void showToast(View view) {
         Context context = getApplicationContext();
 
-        EditText time = (EditText) findViewById(R.id.TimeText);
+        EditText timeText = (EditText) findViewById(R.id.TimeText);
+        String time = timeText.getText().toString();
 
-        int duration = Toast.LENGTH_SHORT;
+        int timeValue = -1;
+        try {
+            timeValue = Integer.parseInt(time);
 
-        Toast toast = Toast.makeText(context, time.getText(), duration);
-        toast.show();
+            //forward this to the next view
+            Toast.makeText(context, "Forwarding: " + timeValue, Toast.LENGTH_LONG).show();
+
+        } catch (NumberFormatException nfe){
+            Toast.makeText(context, "Time not valid, please use only numbers", Toast.LENGTH_LONG).show();
+        }
+
+
     }
 
     @Override
