@@ -47,15 +47,17 @@ public class MainActivity extends AppCompatActivity {
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
 
-    public void showToast(View view) {
+    public void startGame(View view) {
+
         Context context = getApplicationContext();
 
+        //get the time text from the UI
         EditText timeText = (EditText) findViewById(R.id.TimeText);
         String time = timeText.getText().toString();
 
-        int timeValue = -1;
+
         try {
-            timeValue = Integer.parseInt(time);
+            int timeValue = Integer.parseInt(time);
 
             //forward this to the next view
             Toast.makeText(context, "Forwarding: " + timeValue, Toast.LENGTH_LONG).show();
