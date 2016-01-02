@@ -28,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
      */
     private GoogleApiClient client;
 
+    public static final String TIME_IN_MINS = "timeinmins";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(context, "Forwarding: " + timeValue, Toast.LENGTH_LONG).show();
 
             Intent intent = new Intent(this, Timer.class);
-            intent.putExtra("time", time);
+            intent.putExtra(TIME_IN_MINS, time);
             startActivity(intent);
 
         } catch (NumberFormatException nfe){

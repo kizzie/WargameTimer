@@ -41,9 +41,8 @@ public class Timer extends AppCompatActivity {
 
         //get the time from the intent
         Intent intent = getIntent();
-        timeInMins = intent.getIntExtra("time", -1);
-        System.out.println(timeInMins + "*****");
-
+        timeInMins = Integer.valueOf( (String) (intent.getExtras().get(MainActivity.TIME_IN_MINS)) );
+        
         //set the text
         label.setText("Start point: " + timeInMins);
     }
