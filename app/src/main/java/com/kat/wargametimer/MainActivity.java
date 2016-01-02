@@ -1,6 +1,7 @@
 package com.kat.wargametimer;
 
 import android.content.Context;
+import android.content.Intent;
 import android.media.TimedText;
 import android.net.Uri;
 import android.os.Bundle;
@@ -61,6 +62,10 @@ public class MainActivity extends AppCompatActivity {
 
             //forward this to the next view
             Toast.makeText(context, "Forwarding: " + timeValue, Toast.LENGTH_LONG).show();
+
+            Intent intent = new Intent(this, Timer.class);
+            intent.putExtra("time", time);
+            startActivity(intent);
 
         } catch (NumberFormatException nfe){
             Toast.makeText(context, "Time not valid, please use only numbers", Toast.LENGTH_LONG).show();

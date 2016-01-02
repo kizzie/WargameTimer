@@ -52,7 +52,7 @@
         android:id="@+id/StartButton"
         android:layout_below="@+id/SetMusic2Label"
         android:layout_marginTop="84dp"
-        android:onClick="showToast"
+        android:onClick="startGame"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentLeft="true"
