@@ -26,22 +26,27 @@ public class Timer extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        TextView label = (TextView) findViewById(R.id.TimeText);
-        Intent intent = getIntent();
 
+    }
+
+    @Override
+    protected void onStart()
+    {
+        super.onStart();
+
+        //get the text box from the screen
+        TextView label = (TextView) findViewById(R.id.Label);
+
+        //get the time from the intent
+        Intent intent = getIntent();
         timeInMins = intent.getIntExtra("time", -1);
         System.out.println(timeInMins + "*****");
-//        label.setText(timeInMins + " Start Point");
+
+        //set the text
+        label.setText("Start point: " + timeInMins);
     }
+
 
 }
